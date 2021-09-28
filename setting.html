@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settings</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=3d">
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{background: black;}
+        .setting-content{
+            width: 100%;
+            text-align: center;
+            font-size: 35px;
+        }
+        #volume{
+            color: #0f0;
+            margin-top: 20vh;
+        }
+        #earning{
+            color: #f60;
+            margin-top: 15vh;
+        }
+        #heading{
+            text-align: center;
+            color: white;
+            font-family: 'Kristen ITC', 'Lucida Calligraphy';
+            font-size: 50px;
+            margin-top: 15vh;
+        }
+        #volume img{
+            filter: invert(1);
+            height: 30px;
+        }
+        #earning span{
+            color: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="font-effect-3d" id="heading">SETTINGS</h1>
+    <p id="volume" class="setting-content">volume:&nbsp;<img src="asset/volume.png" alt=""></p>
+    <p id="earning" class="setting-content">earning$:&nbsp;
+    <span id="add-earning">0 +</span></p>
+</body>
+<script>
+    let volBtn = document.querySelector("#volume img");
+    let add_earning = document.getElementById("add-earning");
+    let volMod = "vol";
+    let current_wealth = parseInt(Math.random()*10000);
+    let now_earning = parseInt(Math.random()*100);
+    volBtn.onclick = (e)=>{
+        if(volMod=="vol"){
+            e.target.src = "asset/mute.png";
+            volMod = "mute"
+        } else{
+            e.target.src = "asset/volume.png";
+            volMod = "vol"
+        }
+    }
+    add_earning.innerHTML = `${now_earning} +`;
+    add_earning.onclick = ()=>{
+        if(current_wealth>=200){
+            console.log(`your earning was ${current_wealth} and now it is ${parseInt(current_wealth/2)}`);
+            current_wealth=parseInt(current_wealth/2);
+            now_earning*=2;
+            add_earning.innerHTML = `${now_earning} +`;
+        } else{
+            console.log(`your earning was ${current_wealth} and now it is ${current_wealth}`);
+        }
+    }
+</script>
+</html>
