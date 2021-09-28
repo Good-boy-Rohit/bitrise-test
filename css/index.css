@@ -1,0 +1,53 @@
+html, body{
+            margin: 0%;
+            padding:0%;
+            box-sizing: border-box;
+        }
+        body{
+            background: url("../img/main page bg.png");
+        }
+        #heading{
+            color: white;
+            font-family: "lucida handwriting", 'cursive';
+            font-size: 40px;
+            margin: 0; padding: 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 10vh;
+            animation: drop-title 2s;
+        }
+        .controls{
+            background: none;
+            display: block;
+            color: white;
+            border:none;
+            width: 100%;
+            margin-top: 10vh;
+            font-size: 5vw;
+            text-align: center;
+            text-shadow: 8px 5px 4px rgb(185, 185, 185);
+        }
+        #ctrl1{
+            margin-top: 20vh;
+            color: #0f0;
+            font-size: 7vw;
+            animation: no-drop-content 2s;
+        }
+        #ctrl2{color: aqua;}
+        #ctrl3{color: rgb(255, 115, 0);}
+        @keyframes drop-title {
+            0%{margin-top: 0;}
+            30%{margin-top: 10vh;}
+            70%{margin-top: 4vh;}
+            85%{margin-top: 10vh;}
+            93%{margin-top: 8vh;}
+            100%{margin-top: 10vh;}
+        }
+        @keyframes no-drop-content {
+            0%{margin-top: 30vh;}
+            30%{margin-top: 20vh;}
+            70%{margin-top: 26vh;}
+            85%{margin-top: 20vh;}
+            93%{margin-top: 22vh;}
+            100%{margin-top: 20vh;}
+        }
